@@ -4,8 +4,9 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: "Gatsby Contentful Starter",
-    description: "Official Contentful Gatsby Starter",
+    title: "Vimvala",
+    titleTemplate: "%s | Vimvala",
+    description: "Experienced Salesforce Specialists who put your company's needs first.",
   },
   plugins: [
     "gatsby-transformer-sharp",

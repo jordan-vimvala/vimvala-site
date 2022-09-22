@@ -1,6 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import get from 'lodash/get'
+import { Helmet } from "react-helmet"
 
 import Layout from '../components/layout'
 import Hero from '../components/hero'
@@ -13,9 +14,12 @@ class RootIndex extends React.Component {
 
     return (
       <Layout location={this.props.location}>
+        <Helmet>
+          <title>Home</title>
+        </Helmet>
         <Hero
           image={author.heroImage.gatsbyImageData}
-          title={author.name}
+          title="Vimvala"
           content={author.shortBio}
         />
         <ArticlePreview posts={posts} />
@@ -32,7 +36,7 @@ export const pageQuery = graphql`
       nodes {
         title
         slug
-        publishDate(formatString: "MMMM Do, YYYY")
+        publishDate(formatString: "MMM Do, YYYY")
         tags
         heroImage {
           gatsbyImageData(
