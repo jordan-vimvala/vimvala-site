@@ -1,0 +1,7 @@
+@use '~/src/variables';
+
+.container {
+  max-width: variables.$size-max-width;
+  margin: 0 auto;
+  padding: variables.$space-2xl variables.$size-gutter;
+}

@@ -12,14 +12,15 @@ $white: #fff;
 $black: #000;
 $primary: #4788ff;
 $background-dark: #112240;
-$background: var(--white);
-$border: var(--black-fade-5);
 $black-fade-5: rgba(0, 0, 0, 0.05);
+$background: $white;
+$border: $black-fade-5;
 
 /* radii */
 $radius-sm: 4px;
 
 /* spacing */
+$space-xs: 2px;
 $space-sm: 4px;
 $space-md: 8px;
 $space-lg: 16px;
@@ -57,16 +58,16 @@ $text-6xl: 76px;
 
 /* text */
 /* color */
-$text-color: var(--black);
+$text-color: $black;
 $text-light: #eee;
 /* size */
-$text-lead: var(--text-lg);
-$text-prose: var(--text-md);
-$text-title: var(--text-3xl);
+$text-lead: $text-lg;
+$text-prose: $text-md;
+$text-title: $text-3xl;
 /* tracking */
 $text-prose-tracking: -0.011em;
 
 /* size */
-$size-gutter: var(--space-2xl);
-$size-logo: var(--space-2xl);
+$size-gutter: $space-2xl;
+$size-logo: $space-2xl;
 $size-max-width: 80rem;

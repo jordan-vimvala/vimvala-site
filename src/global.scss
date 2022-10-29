@@ -1,3 +1,5 @@
+@use '~/src/variables';
+
 @font-face {
   font-family: 'Inter var';
   font-weight: 100 900;
@@ -25,12 +27,12 @@ html * {
 }
 
 body {
-  background: var(--background);
-  color: var(--text-color);
-  font-family: var(--font-sans);
+  background: variables.$background;
+  color: variables.$text-color;
+  font-family: variables.$font-sans;
   font-size: 16px;
-  font-weight: var(--body);
-  line-height: var(--default);
+  font-weight: variables.$body;
+  line-height: variables.$default;
   margin: 0;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -47,8 +49,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: var(--semibold);
-  line-height: var(--dense);
+  font-weight: variables.$semibold;
+  line-height: variables.$dense;
 }
 
 a {
@@ -57,17 +59,17 @@ a {
 }
 
 a:hover {
-  color: var(--primary);
+  color: variables.$primary;
 }
 
 a.active {
-  font-weight: var(--bold);
+  font-weight: variables.$bold;
 }
 
 tt,
 code,
 kbd {
-  background: var(--black-fade-5);
+  background: variables.$black-fade-5;
   padding-bottom: 0.2em;
   padding-top: 0.2em;
 }
@@ -75,15 +77,15 @@ kbd {
 tt,
 code,
 kbd {
-  font-family: var(--font-monospace);
+  font-family: variables.$font-monospace;
   font-size: 90%;
 }
 
 tt,
 code {
-  background-color: var(--black-fade-5);
-  border-radius: var(--radius-sm);
-  font-weight: var(--medium);
+  background-color: variables.$black-fade-5;
+  border-radius: variables.$radius-sm;
+  font-weight: variables.$medium;
   padding: 0.2em 0;
 }
 
@@ -97,5 +99,5 @@ tt:after {
 
 pre,
 code {
-  font-family: var(--font-monospace);
+  font-family: variables.$font-monospace;
 }
