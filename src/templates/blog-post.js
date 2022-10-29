@@ -5,10 +5,10 @@ import { renderRichText } from 'gatsby-source-contentful/rich-text'
 import { documentToPlainTextString } from '@contentful/rich-text-plain-text-renderer'
 import readingTime from 'reading-time'
 
-import Seo from '../components/seo'
-import Layout from '../components/layout'
-import Hero from '../components/hero'
-import Tags from '../components/tags'
+import Seo from '../seo'
+import Layout from '../layout'
+import Hero from '../components/hero/hero'
+import Tags from '../components/tags/tags'
 import * as styles from './blog-post.module.css'
 
 class BlogPostTemplate extends React.Component {
