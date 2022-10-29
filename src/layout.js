@@ -1,7 +1,7 @@
 import React from 'react'
 
-import './variables.css'
-import './global.css'
+import './variables.scss'
+import './global.scss'
 import Seo from './seo'
 import Navigation from './components/navigation/navigation'
 import Footer from './components/footer/footer'
