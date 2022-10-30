@@ -1,6 +1,6 @@
 import React from 'react'
 
-import * as styles from './tags.module.css'
+import * as styles from './tags/tags.module.css'
 
 const Tags = ({ tags }) =>
   tags?.length > 0 && (

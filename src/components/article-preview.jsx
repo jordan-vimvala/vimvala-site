@@ -3,9 +3,8 @@ import { Link } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
 
-import Container from '../container/container'
-import Tags from '../tags/tags'
-import * as styles from './article-preview.module.scss'
+import Container from './container'
+import Tags from './tags'
 
 const ArticlePreview = ({ posts }) => {
   if (!posts) return null
@@ -13,19 +12,19 @@ const ArticlePreview = ({ posts }) => {
 
   return (
     <Container>
-      <ul className={styles.articleList}>
+      <ul className="m-0 p-0 list-none grid grid-cols-3 gap-12">
         {posts.map((post) => {
           return (
             <li key={post.slug}>
-              <Link to={`/blog/${post.slug}`} className={styles.link}>
+              <Link to={`/blog/${post.slug}`} className="hover:text-primary">
                 <GatsbyImage alt="" image={post.heroImage.gatsbyImageData} />
-                <h2 className={styles.title}>{post.title}</h2>
+                <h2 className="text-xl mb-1 mt-4">{post.title}</h2>
               </Link>
               <div>
                 {post.description?.raw && renderRichText(post.description)}
               </div>
-              <div className={styles.meta}>
-                <small className="meta">{post.publishDate}</small>
+              <div className="flex justify-between">
+                <small>{post.publishDate}</small>
                 <Tags tags={post.tags} />
               </div>
             </li>

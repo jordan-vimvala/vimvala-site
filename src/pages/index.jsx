@@ -1,16 +1,16 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import get from 'lodash/get'
-import { Helmet } from "react-helmet"
+import { Helmet } from 'react-helmet'
 
 import Layout from '../layout'
-import Hero from '../components/hero/hero'
-import ArticlePreview from '../components/article-preview/article-preview'
+import Hero from '../components/hero'
+import ArticlePreview from '../components/article-preview'
 
 class RootIndex extends React.Component {
   render() {
     const posts = get(this, 'props.data.allContentfulBlogPost.nodes')
-    const [author] = get(this, 'props.data.allContentfulPerson.nodes')
+    const [heroImage] = get(this, 'props.data.allContentfulAsset.nodes')
 
     return (
       <Layout location={this.props.location}>
@@ -18,9 +18,10 @@ class RootIndex extends React.Component {
           <title>Home</title>
         </Helmet>
         <Hero
-          image={author.heroImage.gatsbyImageData}
-          title="Vimvala"
-          content={author.shortBio}
+          image={heroImage}
+          content={'"To Blaze New Trails for Businesses and Customers."'}
+          callout="Book Free Consulting Call"
+          overlayOpacity={30}
         />
         <ArticlePreview posts={posts} />
       </Layout>
@@ -51,22 +52,14 @@ export const pageQuery = graphql`
         }
       }
     }
-    allContentfulPerson(
-      filter: { contentful_id: { eq: "15jwOBqpxqSAOy2eOO4S0m" } }
+    allContentfulAsset(
+      filter: { contentful_id: { eq: "29wGjnKfMAUhvILsWZjiKd" } }
     ) {
       nodes {
-        name
-        shortBio {
-          raw
-        }
         title
-        heroImage: image {
-          gatsbyImageData(
-            layout: CONSTRAINED
-            placeholder: BLURRED
-            width: 1180
-          )
-        }
+        description
+        gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED, width: 1920)
+        contentful_id
       }
     }
   }

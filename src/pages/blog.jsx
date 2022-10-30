@@ -4,8 +4,8 @@ import get from 'lodash/get'
 
 import Seo from '../seo'
 import Layout from '../layout'
-import Hero from '../components/hero/hero'
-import ArticlePreview from '../components/article-preview/article-preview'
+import Hero from '../components/hero'
+import ArticlePreview from '../components/article-preview'
 
 class BlogIndex extends React.Component {
   render() {

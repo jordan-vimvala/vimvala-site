@@ -14,6 +14,7 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sharp',
     'gatsby-plugin-sass',
+    'gatsby-plugin-postcss',
     'gatsby-plugin-image',
     {
       resolve: 'gatsby-source-contentful',
