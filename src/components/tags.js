@@ -1,12 +1,10 @@
 import React from 'react'
 
-import * as styles from './tags/tags.module.css'
-
 const Tags = ({ tags }) =>
   tags?.length > 0 && (
-    <small className={styles.tags}>
+    <small className="flex gap-1.5">
       {tags.map((tag) => (
-        <div key={tag} className={styles.tag}>
+        <div key={tag} className="bg-slate-900 rounded py-2 px-3">
           {tag}
         </div>
       ))}
