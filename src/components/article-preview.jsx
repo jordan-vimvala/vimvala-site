@@ -12,7 +12,7 @@ const ArticlePreview = ({ posts }) => {
 
   return (
     <Container>
-      <ul className="m-0 p-0 list-none grid grid-cols-3 gap-12">
+      <ul className="m-0 p-0 list-none grid grid-cols-1 md:grid-cols-3 gap-12">
         {posts.map((post) => {
           return (
             <li key={post.slug}>

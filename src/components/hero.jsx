@@ -21,7 +21,7 @@ const Hero = ({ image, content, callout, overlayOpacity }) => (
       </div>
       {callout && (
         <div className="md:mt-6 mt-2">
-          <button className="bg-orange-600 text-l md:text-2xl text-white py-2 px-3 rounded ring-1 ring-slate">
+          <button className="bg-orange-600 text-l md:text-2xl text-white py-2 px-3 rounded ring-1 ring-slate-300">
             {callout}
           </button>
         </div>
