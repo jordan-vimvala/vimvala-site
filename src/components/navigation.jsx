@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, StaticQuery, graphql } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
+import MobileMenu from './mobile-menu'
 
 const links = [
   { name: 'Home', url: '/' },
@@ -10,16 +11,11 @@ const links = [
 ]
 
 const Navigation = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false)
-
-  const mobileMenuToggle = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen)
-  }
   return (
     <div className="sticky top-0 w-full z-30 bg-dark">
       <div className="mx-auto my-0 flex justify-between items-center w-full md:max-w-7xl">
         <div className="logo w-1/2 p-3">
-          <Link href="/">
+          <Link to="/">
             <StaticQuery
               query={pageQuery}
               render={(data) => (
@@ -33,40 +29,8 @@ const Navigation = () => {
           </Link>
         </div>
 
-        <div class="inline-flex md:hidden text-gray-200">
-          <button class="flex-none px-2" onClick={mobileMenuToggle}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="w-6 h-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 8h16M4 16h16"
-              />
-            </svg>
-            <span class="sr-only">Open Menu</span>
-          </button>
-          {isMobileMenuOpen && (
-            <div class="absolute top-12 right-0 w-full bg-dark">
-              <ul class="flex flex-col items-center justify-center w-full">
-                {links.map((link) => (
-                  <li key={link.name}>
-                    <Link
-                      to={link.url}
-                      activeClassName="font-bold"
-                    >
-                      {link.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
+        <div className="inline-flex md:hidden text-gray-200">
+          <MobileMenu links={links} />
         </div>
 
         <nav className="hidden md:block">

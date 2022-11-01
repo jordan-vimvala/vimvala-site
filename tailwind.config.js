@@ -31,13 +31,6 @@ module.exports = {
       ],
     },
     extend: {
-      spacing: {
-        128: '32rem',
-        144: '36rem',
-      },
-      borderRadius: {
-        '4xl': '2rem',
-      },
       colors: {
         primary: '#4788ff',
         dark: '#112240',
