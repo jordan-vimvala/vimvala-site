@@ -2,7 +2,6 @@ import React from 'react'
 
 import './variables.scss'
 import './global.scss'
-import Seo from './seo'
 import Navigation from './components/navigation'
 import Footer from './components/footer'
 class Template extends React.Component {
@@ -11,7 +10,6 @@ class Template extends React.Component {
 
     return (
       <>
-        <Seo />
         <Navigation />
         <main>{children}</main>
         <Footer />
