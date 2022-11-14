@@ -13,7 +13,6 @@ class BlogIndex extends React.Component {
 
     return (
       <Layout location={this.props.location}>
-        <Seo title="Blog" />
         <Hero title="Blog" />
         <ArticlePreview posts={posts} />
       </Layout>
@@ -22,6 +21,10 @@ class BlogIndex extends React.Component {
 }
 
 export default BlogIndex
+
+export const Head = () => {
+  return <Seo title="Blog" />
+}
 
 export const pageQuery = graphql`
   query BlogIndexQuery {
