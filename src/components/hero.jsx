@@ -12,7 +12,8 @@ const Hero = ({ image, content, callout, overlayOpacity }) => (
     )}
     {overlayOpacity && (
       <div
-        className={`bg-black/${overlayOpacity} absolute top-0 w-full h-full`}
+        style={{ opacity: overlayOpacity / 100 }}
+        className={`bg-black absolute top-0 w-full h-full`}
       />
     )}
     <div className="absolute top-0 w-full h-full flex flex-col items-center justify-center">
