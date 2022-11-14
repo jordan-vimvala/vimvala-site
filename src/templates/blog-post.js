@@ -32,7 +32,7 @@ class BlogPostTemplate extends React.Component {
         <Hero
           image={post.heroImage?.gatsbyImageData}
           title={post.title}
-          content={post.description}
+          content={post.description.raw}
         />
         <div className={styles.container}>
           <span className={styles.meta}>

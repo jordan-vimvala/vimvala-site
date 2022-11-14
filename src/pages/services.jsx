@@ -5,6 +5,7 @@ import get from 'lodash/get'
 import Layout from '../layout'
 import Hero from '../components/hero'
 import ArticlePreview from '../components/article-preview'
+import Seo from '../seo'
 
 class RootIndex extends React.Component {
   render() {
@@ -28,11 +29,11 @@ class RootIndex extends React.Component {
 export default RootIndex
 
 export const Head = () => {
-  return <title>Home</title>
+  return <Seo title="Services" />
 }
 
 export const pageQuery = graphql`
-  query HomeQuery {
+  query ServicesQuery {
     allContentfulBlogPost(sort: { fields: [publishDate], order: DESC }) {
       nodes {
         title
