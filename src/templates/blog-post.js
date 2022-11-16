@@ -16,19 +16,11 @@ class BlogPostTemplate extends React.Component {
     const post = get(this.props, 'data.contentfulBlogPost')
     const previous = get(this.props, 'data.previous')
     const next = get(this.props, 'data.next')
-    const plainTextDescription = documentToPlainTextString(
-      JSON.parse(post.description.raw)
-    )
     const plainTextBody = documentToPlainTextString(JSON.parse(post.body.raw))
     const { minutes: timeToRead } = readingTime(plainTextBody)
 
     return (
       <Layout location={this.props.location}>
-        <Seo
-          title={post.title}
-          description={plainTextDescription}
-          image={`http:${post.heroImage.resize.src}`}
-        />
         <Hero
           image={post.heroImage?.gatsbyImageData}
           title={post.title}
@@ -73,6 +65,19 @@ class BlogPostTemplate extends React.Component {
 }
 
 export default BlogPostTemplate
+
+export const Head = ({ data }) => {
+  const plainTextDescription = documentToPlainTextString(
+    JSON.parse(data.contentfulBlogPost.description.raw)
+  )
+  return (
+    <Seo
+      title={data.contentfulBlogPost.title}
+      description={plainTextDescription}
+      image={`http:${data.contentfulBlogPost.heroImage.resize.src}`}
+    />
+  )
+}
 
 export const pageQuery = graphql`
   query BlogPostBySlug(
