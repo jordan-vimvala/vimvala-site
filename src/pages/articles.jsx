@@ -7,32 +7,34 @@ import Layout from '../layout'
 import Hero from '../components/hero'
 import ArticlePreview from '../components/article-preview'
 
-class BlogIndex extends React.Component {
+class ArticleIndex extends React.Component {
   render() {
     const posts = get(this, 'props.data.allContentfulBlogPost.nodes')
 
     return (
       <Layout location={this.props.location}>
-        <Hero title="Blog" />
-        <ArticlePreview posts={posts} />
+        <div className="bg-slate-100">
+          <Hero title="Articles" />
+          <ArticlePreview posts={posts} />
+        </div>
       </Layout>
     )
   }
 }
 
-export default BlogIndex
+export default ArticleIndex
 
 export const Head = () => {
-  return <Seo title="Blog" />
+  return <Seo title="Articles" />
 }
 
 export const pageQuery = graphql`
-  query BlogIndexQuery {
+  query ArticleIndexQuery {
     allContentfulBlogPost(sort: { publishDate: DESC }) {
       nodes {
         title
         slug
-        publishDate(formatString: "MMMM Do, YYYY")
+        publishDate(formatString: "LL")
         tags
         heroImage {
           gatsbyImageData(

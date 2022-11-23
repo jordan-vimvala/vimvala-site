@@ -9,7 +9,7 @@ import Seo from '../seo'
 import Layout from '../layout'
 import Hero from '../components/hero'
 import Tags from '../components/tags'
-import * as styles from './blog-post.module.css'
+import * as styles from './article.module.css'
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -42,14 +42,14 @@ class BlogPostTemplate extends React.Component {
                 <ul className={styles.articleNavigation}>
                   {previous && (
                     <li>
-                      <Link to={`/blog/${previous.slug}`} rel="prev">
+                      <Link to={`/article/${previous.slug}`} rel="prev">
                         ← {previous.title}
                       </Link>
                     </li>
                   )}
                   {next && (
                     <li>
-                      <Link to={`/blog/${next.slug}`} rel="next">
+                      <Link to={`/article/${next.slug}`} rel="next">
                         {next.title} →
                       </Link>
                     </li>

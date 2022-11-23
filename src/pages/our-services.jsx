@@ -1,4 +1,5 @@
 import React from 'react'
+import { graphql } from 'gatsby'
 
 import Layout from '../layout'
 import Seo from '../seo'
@@ -6,13 +7,21 @@ import Seo from '../seo'
 import Container from '../components/container'
 
 import { FaLaptopCode, FaHeadset, FaSyncAlt } from 'react-icons/fa'
+import { GatsbyImage } from 'gatsby-plugin-image'
 
 class RootIndex extends React.Component {
   render() {
+    const services = this.props.data.allContentfulService.edges.map((edge) => ({
+      title: edge.node.title,
+      image: edge.node.image.gatsbyImageData,
+      imageAlt: edge.node.image.description,
+      description: edge.node.longDescription.longDescription,
+    }))
+
     return (
       <Layout location={this.props.location}>
         <Container>
-          <div className="text-center max-w-2xl mx-auto mt-32">
+          <div className="text-center max-w-2xl mx-auto mt-24">
             <h3 className="font-bold text-3xl mb-8">
               Services offered to help your business
             </h3>
@@ -51,8 +60,20 @@ class RootIndex extends React.Component {
               </span>
             </div>
           </div>
-          {/* Add 1Up component */}
         </Container>
+        {services.map((service, i) => (
+          <div className={`w-full ${i % 2 === 0 ? 'bg-lightGrey' : ''}`}>
+            <div className={`flex max-w-6xl mx-auto flex-col md:gap-16 md:py-24 ${i % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'}`}>
+              <div className="flex-1">
+                <GatsbyImage image={service.image} alt={service.imageAlt} />
+              </div>
+              <div className="p-3 flex-1">
+                <h3 className="font-bold text-3xl text-primary mb-8">{service.title}</h3>
+                <p className="text-gray-500 leading-7">{service.description}</p>
+              </div>
+            </div>
+          </div>
+        ))}
       </Layout>
     )
   }
@@ -61,5 +82,25 @@ class RootIndex extends React.Component {
 export default RootIndex
 
 export const Head = () => {
-  return <Seo title="Services" />
+  return <Seo title="Our Services" />
 }
+
+export const query = graphql`
+  query {
+    allContentfulService(sort: {order: ASC}) {
+      edges {
+        node {
+          id
+          longDescription {
+            longDescription
+          }
+          image {
+            gatsbyImageData(placeholder: BLURRED)
+            description
+          }
+          title
+        }
+      }
+    }
+  }
+`

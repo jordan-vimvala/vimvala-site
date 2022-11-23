@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: [
-        'Inter var',
+        'Open Sans',
         '-apple-system',
         'BlinkMacSystemFont',
         'Segoe UI',
@@ -34,8 +34,9 @@ module.exports = {
       colors: {
         primary: '#4788ff',
         dark: '#112240',
+        lightGrey: '#f7f9fb',
       },
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/line-clamp')],
 }
