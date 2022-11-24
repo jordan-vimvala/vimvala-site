@@ -72,7 +72,7 @@ class RootIndex extends React.Component {
               <div class="w-full px-3">
                 <label
                   class="block uppercase tracking-wide text-slate-700 text-xs font-bold mb-2"
-                  htmlFor="password"
+                  htmlFor="message"
                 >
                   Your Message
                 </label>

@@ -90,7 +90,7 @@ export const Head = ({ data }) => {
     <Seo
       title={data.contentfulBlogPost.title}
       description={plainTextDescription}
-      image={`http:${data.contentfulBlogPost.heroImage.resize.src}`}
+      image={`https:${data.contentfulBlogPost.heroImage.resize.src}`}
     />
   )
 }
