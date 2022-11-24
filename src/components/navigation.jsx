@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, StaticQuery, graphql } from 'gatsby'
+import { Link, useStaticQuery, graphql } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import MobileMenu from './mobile-menu'
 
@@ -11,20 +11,29 @@ const links = [
 ]
 
 const Navigation = () => {
+  const data = useStaticQuery(graphql`
+    query NavigationQuery {
+      allContentfulAsset(
+        filter: { contentful_id: { eq: "mEDxMfC7Rh4N70yqJClW7" } }
+      ) {
+        nodes {
+          title
+          description
+          gatsbyImageData(layout: CONSTRAINED, width: 400, placeholder: BLURRED)
+        }
+      }
+    }
+  `)
+
   return (
     <div className="sticky top-0 w-full z-30 bg-dark">
       <div className="mx-auto my-0 flex justify-between items-center w-full md:max-w-7xl">
         <div className="logo w-1/2 p-3">
           <Link to="/">
-            <StaticQuery
-              query={pageQuery}
-              render={(data) => (
-                <GatsbyImage
-                  image={data.allContentfulAsset.nodes[0].gatsbyImageData}
-                  alt="logo"
-                  loading="eager"
-                />
-              )}
+            <GatsbyImage
+              image={data.allContentfulAsset.nodes[0].gatsbyImageData}
+              alt="logo"
+              loading="eager"
             />
           </Link>
         </div>
@@ -53,17 +62,3 @@ const Navigation = () => {
 }
 
 export default Navigation
-
-export const pageQuery = graphql`
-  query NavigationQuery {
-    allContentfulAsset(
-      filter: { contentful_id: { eq: "mEDxMfC7Rh4N70yqJClW7" } }
-    ) {
-      nodes {
-        title
-        description
-        gatsbyImageData(layout: CONSTRAINED, width: 400, placeholder: BLURRED)
-      }
-    }
-  }
-`

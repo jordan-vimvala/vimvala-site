@@ -26,10 +26,10 @@ const ArticlePreview = ({ posts }) => {
                   <div>
                     <h2 className="font-bold mb-1 mt-4">{post.title}</h2>
                     <div className="text-xs">
-                      <p className="line-clamp-3">
+                      <div className="line-clamp-3">
                         {post.description?.raw &&
                           renderRichText(post.description)}
-                      </p>
+                      </div>
                     </div>
                   </div>
                   <div className="flex justify-between">
