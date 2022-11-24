@@ -5,7 +5,7 @@ import MobileMenu from './mobile-menu'
 
 const links = [
   { name: 'Home', url: '/' },
-  { name: 'Services', url: '/services' },
+  { name: 'Services', url: '/our-services' },
   { name: 'Articles', url: '/articles' },
   { name: 'Contact', url: '/contact' },
 ]
