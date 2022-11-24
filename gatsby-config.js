@@ -5,11 +5,13 @@ require('dotenv').config({
 module.exports = {
   siteMetadata: {
     title: 'Vimvala',
+    siteUrl: 'https://vimvala.com',
     titleTemplate: '%s | Vimvala',
     description:
       "Experienced Salesforce Specialists who put your company's needs first.",
   },
   plugins: [
+    'gatsby-plugin-sitemap',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     'gatsby-plugin-sass',
