@@ -11,7 +11,6 @@ module.exports = {
       "Experienced Salesforce Specialists who put your company's needs first.",
   },
   plugins: [
-    'gatsby-plugin-sitemap',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     'gatsby-plugin-sass',
@@ -35,6 +34,51 @@ module.exports = {
         theme_color: '#a2466c',
         display: 'standalone',
         icon: 'static/vimvala-favicon.png',
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-sitemap',
+      options: {
+        query: `
+        {
+          allSitePage {
+            nodes {
+              path
+            }
+          }
+          allContentfulBlogPost {
+            nodes {
+              updatedAt
+              slug
+            }
+          }
+        }
+      `,
+        resolveSiteUrl: () => 'https://vimvala.com',
+        resolvePages: ({
+          allSitePage: { nodes: allPages },
+          allContentfulBlogPost: { nodes: allArticles },
+        }) => {
+          const wpNodeMap = allArticles.reduce((acc, node) => {
+            const { slug } = node
+            acc[`/article/${slug}/`] = node
+
+            return acc
+          }, {})
+          console.log(wpNodeMap)
+          
+          return allPages.map((page) => {
+            console.log(page.path)
+            console.log(wpNodeMap[page.path])
+            return { ...page, ...wpNodeMap[page.path] }
+          })
+        },
+        serialize: ({ path, updatedAt }) => {
+          return {
+            url: path,
+            lastmod: updatedAt,
+          }
+        },
       },
     },
   ],
