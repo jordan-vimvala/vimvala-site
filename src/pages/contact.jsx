@@ -101,5 +101,10 @@ class RootIndex extends React.Component {
 export default RootIndex
 
 export const Head = () => {
-  return <Seo title="Contact Us" />
+  return (
+    <Seo
+      title="Contact Us"
+      description="Feel free to send us a message any time."
+    />
+  )
 }

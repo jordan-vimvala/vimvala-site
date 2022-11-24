@@ -25,7 +25,12 @@ class ArticleIndex extends React.Component {
 export default ArticleIndex
 
 export const Head = () => {
-  return <Seo title="Articles" />
+  return (
+    <Seo
+      title="Articles"
+      description="Aggregated knowledge about the Salesforce platofrm and developing on it."
+    />
+  )
 }
 
 export const pageQuery = graphql`

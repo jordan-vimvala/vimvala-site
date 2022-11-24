@@ -63,12 +63,18 @@ class RootIndex extends React.Component {
         </Container>
         {services.map((service, i) => (
           <div className={`w-full ${i % 2 === 0 ? 'bg-lightGrey' : ''}`}>
-            <div className={`flex max-w-6xl mx-auto flex-col md:gap-16 md:py-24 ${i % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'}`}>
+            <div
+              className={`flex max-w-6xl mx-auto flex-col md:gap-16 md:py-24 ${
+                i % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'
+              }`}
+            >
               <div className="flex-1">
                 <GatsbyImage image={service.image} alt={service.imageAlt} />
               </div>
               <div className="p-3 flex-1">
-                <h3 className="font-bold text-3xl text-primary mb-8">{service.title}</h3>
+                <h3 className="font-bold text-3xl text-primary mb-8">
+                  {service.title}
+                </h3>
                 <p className="text-gray-500 leading-7">{service.description}</p>
               </div>
             </div>
@@ -82,12 +88,17 @@ class RootIndex extends React.Component {
 export default RootIndex
 
 export const Head = () => {
-  return <Seo title="Our Services" />
+  return (
+    <Seo
+      title="Our Services"
+      description="At Vimvala we offer many Salesforce services to help you operate your business efficiently."
+    />
+  )
 }
 
 export const query = graphql`
   query {
-    allContentfulService(sort: {order: ASC}) {
+    allContentfulService(sort: { order: ASC }) {
       edges {
         node {
           id
