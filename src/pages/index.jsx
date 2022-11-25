@@ -18,6 +18,7 @@ class RootIndex extends React.Component {
           image={heroImage}
           content={'"To Blaze New Trails for Businesses and Customers."'}
           callout="Book Free Consulting Call"
+          calloutLink="/contact"
           overlayOpacity={30}
         />
         <ArticlePreview posts={posts} />
