@@ -62,7 +62,7 @@ class RootIndex extends React.Component {
           </div>
         </Container>
         {services.map((service, i) => (
-          <div className={`w-full ${i % 2 === 0 ? 'bg-lightGrey' : ''}`}>
+          <div key={service.title} className={`w-full ${i % 2 === 0 ? 'bg-lightGrey' : ''}`}>
             <div
               className={`flex max-w-6xl mx-auto flex-col md:gap-16 md:py-24 ${
                 i % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'
