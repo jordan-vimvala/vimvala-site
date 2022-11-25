@@ -10,7 +10,7 @@ const ArticlePreview = ({ posts }) => {
   if (!Array.isArray(posts)) return null
 
   return (
-    <ul className="m-0 p-1 list-none flex flex-col gap-6 bg-red md:max-w-5xl md:mx-auto">
+    <ul className="m-0 p-1 list-none flex flex-col gap-6 md:max-w-5xl md:mx-auto">
       {posts.map((post) => {
         return (
           <li key={post.slug}>
