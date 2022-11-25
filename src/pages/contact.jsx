@@ -8,9 +8,9 @@ class RootIndex extends React.Component {
       <Layout location={this.props.location}>
         <div className="max-w-screen-md mx-auto p-5">
           <div className="text-center mb-16">
-            <p className="mt-4 text-sm leading-7 text-slate-500 font-regular uppercase">
-              Contact
-            </p>
+            <h1 className="mt-4 text-sm leading-7 text-slate-500 font-regular uppercase">
+              Contact Us
+            </h1>
             <h3 className="text-3xl sm:text-4xl leading-normal font-extrabold tracking-tight text-slate-900">
               Get In <span className="text-primary">Touch</span>
             </h3>

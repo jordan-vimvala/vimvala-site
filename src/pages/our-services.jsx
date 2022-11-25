@@ -22,9 +22,9 @@ class RootIndex extends React.Component {
       <Layout location={this.props.location}>
         <Container>
           <div className="text-center max-w-2xl mx-auto mt-24">
-            <h3 className="font-bold text-3xl mb-8">
+            <h1 className="font-bold text-3xl mb-8">
               Services offered to help your business
-            </h3>
+            </h1>
             <p>
               Whether you're just starting in Salesforce or you want to squeeze
               a little more functionality out of it. We're here to help you

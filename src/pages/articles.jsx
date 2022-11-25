@@ -13,10 +13,16 @@ class ArticleIndex extends React.Component {
 
     return (
       <Layout location={this.props.location}>
-        <div className="bg-slate-100">
-          <Hero title="Articles" />
-          <ArticlePreview posts={posts} />
+        <div className="bg-slate-100 py-32">
+          <div className="bg-slate-100 max-w-3xl m-auto text-center">
+            <h1 className="text-2xl text-primary font-bold mb-3">Articles</h1>
+            <h2 className="text-xl font-bold">
+              Our best tips and tricks for making the most of the Salesforce
+              platform
+            </h2>
+          </div>
         </div>
+        <ArticlePreview posts={posts} />
       </Layout>
     )
   }
