@@ -1,6 +1,7 @@
 import React from 'react'
 import Layout from '../layout'
 import Seo from '../seo'
+import { Link } from 'gatsby'
 
 class RootIndex extends React.Component {
   render() {
@@ -68,6 +69,24 @@ class RootIndex extends React.Component {
               </div>
             </div>
 
+            
+            <div className="flex flex-wrap -mx-3 mb-6">
+              <div className="w-full px-3">
+                <label
+                  className="block uppercase tracking-wide text-slate-700 text-xs font-bold mb-2"
+                  htmlFor="phone"
+                >
+                  Phone Number
+                </label>
+                <input
+                  className="block w-full bg-slate-200 text-slate-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                  id="phone"
+                  type="tel"
+                  name="phone"
+                />
+              </div>
+            </div>
+
             <div className="flex flex-wrap -mx-3 mb-6">
               <div className="w-full px-3">
                 <label
@@ -92,6 +111,18 @@ class RootIndex extends React.Component {
               </div>
             </div>
           </form>
+
+          <p className="text-sm text-slate-600 mt-4">
+            By submitting this form, you agree to out{' '}
+            <Link className="text-primary" to="/privacy-policy">
+              Privacy Policy
+            </Link>{' '}
+            and{' '}
+            <Link className="text-primary" to="/terms-and-conditions">
+              Terms and Conditions
+            </Link>
+            .
+          </p>
         </div>
       </Layout>
     )
