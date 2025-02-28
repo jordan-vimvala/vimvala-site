@@ -69,7 +69,6 @@ class RootIndex extends React.Component {
               </div>
             </div>
 
-            
             <div className="flex flex-wrap -mx-3 mb-6">
               <div className="w-full px-3">
                 <label
@@ -101,6 +100,17 @@ class RootIndex extends React.Component {
                   name="message"
                 ></textarea>
               </div>
+              <p className="text-sm text-slate-600 mt-4">
+                By submitting this form, you agree to our{' '}
+                <Link className="text-primary" to="/privacy-policy">
+                  Privacy Policy
+                </Link>{' '}
+                and{' '}
+                <Link className="text-primary" to="/terms-and-conditions">
+                  Terms and Conditions
+                </Link>
+                .
+              </p>
               <div className="flex justify-between w-full px-3">
                 <button
                   className="shadow bg-primary focus:shadow-outline focus:outline-none text-white font-bold py-2 px-6 rounded"
@@ -111,18 +121,6 @@ class RootIndex extends React.Component {
               </div>
             </div>
           </form>
-
-          <p className="text-sm text-slate-600 mt-4">
-            By submitting this form, you agree to out{' '}
-            <Link className="text-primary" to="/privacy-policy">
-              Privacy Policy
-            </Link>{' '}
-            and{' '}
-            <Link className="text-primary" to="/terms-and-conditions">
-              Terms and Conditions
-            </Link>
-            .
-          </p>
         </div>
       </Layout>
     )
