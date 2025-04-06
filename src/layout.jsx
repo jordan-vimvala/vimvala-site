@@ -13,6 +13,9 @@ class Template extends React.Component {
         <Navigation />
         <main>{children}</main>
         <Footer />
+        {/* Start of HubSpot Embed Code */}
+        <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/242460152.js"></script>
+        {/* End of HubSpot Embed Code */}
       </>
     )
   }
